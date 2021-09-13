@@ -5,13 +5,13 @@ Using Terraform Workspaces, I implemented a setup with three AWS accounts:
 - The warehouse account
 
 ### The main account
-The main role extends trust to the streaming and warehouse accounts, allowing users from the 2 accounts to use roles that are defined in the main account. A user fom the main or streaming account can assume a role from the main account, and have access to shared resources using the attached policies.
+The main role extends trust to the streaming and warehouse accounts, allowing users from the streaming and warehouse accounts to use roles defined in the main account. A user from the main or streaming account can assume a role from the main account and access shared resources using the attached policies.
 
 ### The streaming account
-Firehose unloads the streams as JSON files to S3
+Firehose unloads the streams as JSON files to S3.
 
 ### The warehouse account
-A lambda function is triggered every time a JSON file is added to the events buckets, The lambda function copies the file contents to Redshift
+A lambda function is triggered every time a JSON file is added to the events buckets. The lambda function copies the file contents to Redshift.
 
 ## Usage
 - Install Terraform v1.0.6
@@ -19,12 +19,12 @@ A lambda function is triggered every time a JSON file is added to the events buc
     - `main/env_vars/main.tfvars`
     - `environments/env_vars/streaming.tfvars`
     - `environments/env_vars/warehouse.tfvars`
-- Provision the shared resouces:
+- Provision the shared resources:
     - `cd main`
     - `terraform workspace new main`
     - plan: `ENV=main make plan`
     - apply: `ENV=main make apply`
-- Provision the streaming and warehouse resouces:
+- Provision the streaming and warehouse resources:
     - `cd environments`
     - `terraform workspace new streaming`
     - plan: `ENV=streaming make plan`
