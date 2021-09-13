@@ -38,6 +38,6 @@ A lambda function is triggered every time a JSON file is added to the events buc
 - Compress S3 files and increase the S3 buffer size to reduce long-term storage costs.
 
 ### Pending:
-- Set up AWS Secrets Manager to provide env vaiables to lambda.
+- Set up AWS Secrets Manager to provide sensitive env variables to lambda.
 - Prepare cost estimates per service
 - Provide scaling metrics
