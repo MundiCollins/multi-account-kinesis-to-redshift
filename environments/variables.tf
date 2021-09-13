@@ -17,3 +17,11 @@ variable "user_event_bucket_arn" {
 variable "user_utm_bucket_arn" {
   type = string
 }
+
+variable "user_event_bucket_id" {
+  type = string
+}
+
+variable "user_utm_bucket_id" {
+  type = string
+}
