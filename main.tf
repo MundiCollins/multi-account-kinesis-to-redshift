@@ -1,9 +1,9 @@
 module "s3" {
-  source = "/main/"
+  source = "./main/"
 }
 
 module "environments" {
-  source = "/environments/"
+  source = "./environments/"
 
   user_event_bucket_arn = module.s3.user_event_bucket_arn
   user_event_bucket_id  = module.s3.user_event_bucket_id
