@@ -9,3 +9,7 @@ variable "aws_profile" {
 variable "aws_region" {
   type = string
 }
+
+variable "aws_account_ids" {
+  type = map(any)
+}
